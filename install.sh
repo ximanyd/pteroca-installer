@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Color codes
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -755,12 +757,6 @@ check_for_errors() {
         echo -e "  │  └─ chown -R www-data:www-data /var/www/pteroca"
         echo -e "  └─ Clear Cache:"
         echo -e "     └─ php /var/www/pteroca/bin/console cache:clear\n"
-
-        echo -e "${RED}▣ Getting Help:${NC}"
-        echo -e "  ├─ Visit: https://pteroca.com/troubleshooting"
-        echo -e "  ├─ Forums: https://pteroca.com/community"
-        echo -e "  ├─ GitHub: https://github.com/pteroca-com/panel/issues"
-        echo -e "  └─ Email: support@pteroca.com\n"
 
         echo -e "${RED}▣ Debug Information:${NC}"
         echo -e "  ├─ OS Version: $(lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1)"
